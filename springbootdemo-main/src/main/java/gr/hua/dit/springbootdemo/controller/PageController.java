@@ -15,42 +15,42 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class PageController {
 
-        @Autowired
-        private CustomerService CustomerService;
+    @Autowired
+    private CustomerService CustomerService;
 
-        @Autowired
-        private LawyerService LawyerService;
+    @Autowired
+    private LawyerService LawyerService;
 
-        @Autowired
-        private AppService AppService;
+    @Autowired
+    private AppService AppService;
 
 
-        @GetMapping("/")
-        public String index() {
-            return "index";
-        }
+    @GetMapping("/")
+    public String index() {
+        return "index";
+    }
 
-        @GetMapping("/customerslist")
-        public String showTeacherList(Model model) {
-            List<Customer> customers = CustomerService.getCustomers();
-            model.addAttribute("customer", customers);
-            return "list-customers";
+    @GetMapping("/customerslist")
+    public String showTeacherList(Model model) {
+        List<Customer> customers = CustomerService.getCustomers();
+        model.addAttribute("customer", customers);
+        return "list-customers";
 
-        }
+    }
 
-        @GetMapping("/lawyerslist")
-        public String showLawyersList(Model model) {
-            List<Lawyer> lawyers = LawyerService.getLawyers();
-            model.addAttribute("lawyers", lawyers);
-            return "list-lawyer";
-        }
+    @GetMapping("/lawyerslist")
+    public String showLawyersList(Model model) {
+        List<Lawyer> lawyers = LawyerService.getLawyers();
+        model.addAttribute("lawyers", lawyers);
+        return "lawyers";
+    }
 
-        @GetMapping("/applist")
-        public String showAppsList(Model model) {
-            List<App> apps = AppService.getApp();
-            model.addAttribute("apps", apps);
-            return "list-app";
-        }
+    @GetMapping("/applist")
+    public String showAppsList(Model model) {
+        List<App> apps = AppService.getApp();
+        model.addAttribute("apps", apps);
+        return "list-app";
+    }
 
     @GetMapping("/appform")
     public String showAppsForm(Model model) {

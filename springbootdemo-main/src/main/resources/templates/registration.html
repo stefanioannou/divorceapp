@@ -12,12 +12,17 @@
   <form class="row g-3" th:action="@{/register}" th:object="${user}" method="post">
     <div class="form-outline mb-4">
       <label for="username" class="form-label">Username</label>
-      <input type="text" th:field="*{username}" id="firstName" placeholder="username" class="form-control">
+      <input type="text" th:field="*{username}" id="username" placeholder="username" class="form-control">
       <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
     </div>
-    <div class="form-outline mb-4">
+  <!--  <div class="form-outline mb-4">
+      <label for="afm" class="form-label">AFM</label>
+      <input type="int" th:field="*{afm}" id="afm" placeholder="afm" class="form-control">
+      <span th:if="${#fields.hasErrors('afm')}" th:errors="*{afm}"></span>
+    </div>
+    --><div class="form-outline mb-4">
       <label for="password" class="form-label">Password</label>
-      <input type="password" th:field="*{password}" id="name" placeholder="password" class="form-control">
+      <input type="password" th:field="*{password}" id="password" placeholder="password" class="form-control">
       <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>

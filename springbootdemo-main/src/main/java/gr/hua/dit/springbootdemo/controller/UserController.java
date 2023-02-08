@@ -43,7 +43,7 @@ public class UserController {
         return new ModelAndView("redirect:/");
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/signin", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
         if (error != null)
             model.addAttribute("errorMsg", "Your username and password are invalid.");
@@ -51,7 +51,7 @@ public class UserController {
         if (logout != null)
             model.addAttribute("msg", "You have been logged out successfully.");
 
-        return "login";
+        return "signin";
     }
 
 
